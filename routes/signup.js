@@ -16,9 +16,9 @@ router.post('/', function (req, res, next) {
     let username = req.body.username;
     let password = req.body.password;
 
-    var small = new User({
-        username: 'username',
-        password: 'password'
+    let small = new User({
+        username: username,
+        password: password
     });
     small.save(function (err) {
         if (err) {
