@@ -1,9 +1,9 @@
 particlesJS('particles-js', {
         "particles": {
             "number": {
-                "value": 200,
+                "value": 500,
                 "density": {
-                    "enable": true,
+                    "enable": false,
                     "value_area": 800
                 }
             },
@@ -68,7 +68,7 @@ particlesJS('particles-js', {
             }
         },
         "interactivity": {
-            "detect_on": "canvas",
+            "detect_on": "windows",
             "events": {
                 "onhover": {
                     "enable": true,

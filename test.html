@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="cookie">+</button>
+    <progress id="avancement" value="0" max="100" style="width: 100%"></progress>
+    <button disabled="disabled" id="gainpow1" class="gainpow" data-upper="1">1</button>
+    <button disabled="disabled" id="gainpow2" class="gainpow" data-upper="2">2</button>
+    <button disabled="disabled" id="gainpow3" class="gainpow" data-upper="3">3</button>
+    <button disabled="disabled" id="gainpow4" class="gainpow" data-upper="4">4</button>
+
+    <script>
+        let gainpow = 0;
+        let upper = 1;
+
+        function progress(value) {
+            document.querySelector('#avancement').value = value;
+            document.querySelector('#gainpow1').disabled = !(value > 10);
+            document.querySelector('#gainpow2').disabled = !(value > 20);
+            document.querySelector('#gainpow3').disabled = !(value > 30);
+            document.querySelector('#gainpow4').disabled = !(value > 40);
+        }
+
+
+        document
+            .querySelectorAll('.gainpow')
+            .forEach(v => v.addEventListener('click', () => {
+                document.querySelector('#avancement').max += 200;
+                upper += parseInt(v.getAttribute('data-upper'));
+                gainpow = 0
+                progress(0);
+            }));
+
+        document
+            .querySelector('#cookie')
+            .addEventListener('click', () => {
+                gainpow += upper;
+                progress(gainpow);
+            });
+    </script>
+</body>
+
+</html>
