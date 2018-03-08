@@ -1,15 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var session = require('express-session');
-router.use(session({
-  secret: "Shh, its a secret!"
-}));
 
-function checkSignIn(req, res) {
-  if (req.session.user) {
-    next();
+function checkSignIn(req, res, next) {
+  if (req.session.isConnected) {
+    return next();
   } else {
-    res.redirect('/login');
+    res.redirect('/login')
   }
 }
 

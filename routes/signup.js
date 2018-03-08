@@ -1,10 +1,6 @@
 var express = require('express');
 const User = require('../models/User');
 var router = express.Router();
-var session = require('express-session');
-router.use(session({
-    secret: "Shh, its a secret!"
-}));
 
 router.get('/', function (req, res, next) {
     res.render('signup', {
@@ -13,21 +9,40 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-    let username = req.body.username;
-    let password = req.body.password;
+    var username = req.body.username;
+    var password = req.body.password;
 
-    let small = new User({
-        username: username,
-        password: password
-    });
-    small.save(function (err) {
-        if (err) {
-            return handleError(err)
+    //On vérifie si un utilisateur existe déjà
+    User.find({
+        'username': username
+    }, function (err, user) {
+        if (user[0]) {
+            res.redirect('/signup')
+            console.log('Le nom d\'utilisateur existe déjà')
         } else {
-            res.redirect('/login');
+            //on vérifie si le mot de passe existe déjà
+            User.find({
+                'password': password
+            }, function (err, pass) {
+                if (pass[0]) {
+                    res.redirect('/signup')
+                    console.log('Le mot de passe existe déjà')
+                } else {
+                    var small = new User({
+                        username: username,
+                        password: password
+                    });
+                    small.save(function (err) {
+                        if (err) {
+                            return handleError(err)
+                        } else {
+                            res.redirect('/login');
+                        }
+                    })
+                }
+            });
         }
-
-    })
+    });
 })
 
 module.exports = router;

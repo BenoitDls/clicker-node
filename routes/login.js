@@ -1,11 +1,6 @@
 var express = require('express');
 const User = require('../models/User');
 var router = express.Router();
-var session = require('express-session');
-router.use(session({
-    secret: "Shh, its a secret!"
-}));
-
 
 router.get('/', function (req, res, next) {
     res.render('login', {
@@ -13,30 +8,35 @@ router.get('/', function (req, res, next) {
     });
 });
 
-function authenticate(name, pass, fn) {
-    db.User.findOne({
-        username: name
-    }, function (err, user) {
-        if (!user) return fn(new Error('cannot find user'));
-        hash(pass, user.salt, function (err, hash) {
-            if (err) return fn(err);
-            if (hash == user.hash) return fn(null, user);
-            fn(new Error('invalid password'));
-        })
-    })
-}
-
 router.post('/', function (req, res) {
-    authenticate(req.body.username, req.body.password, function (err, user) {
-        if (user) {
-            req.session.regenerate(function () {
-                req.session.user = user;
-                res.redirect('back');
-            });
+    let username
+    let password
+
+    if (req.body.username) {
+        username = req.body.username
+        if (req.body.password) {
+            password = req.body.password
+            
+            User.find({
+                'username': username
+            }, function (err, user) {
+                console.log(user)
+                if (user && password == user[0].password) {
+                    req.session.id = user._id
+                    req.session.username = user.username
+                    req.session.isConnected = true
+                    res.redirect('/')
+                } else {
+                    res.redirect('/login')
+                }
+            })
         } else {
-            res.redirect('login');
+            res.redirect('/login')
         }
-    });
-});
+    } else {
+        res.redirect('/login')
+    }
+})
+
 
 module.exports = router;

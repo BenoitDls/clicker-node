@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://admin:clk-node@ds247838.mlab.com:47838/clicker-nodejs');
 
 let Schema = mongoose.Schema;
 
