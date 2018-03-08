@@ -1,9 +1,16 @@
 extends layout
 
 block content
+  #particles-js
   .container
     .row
       .col-lg-6.text-center.mt-5
         h1#bossName Boss n°1
-        img.rounded.text-center.mt-5(src='/images/boss1.gif')
+        img.rounded.text-center.mt-5(src='/images/boss2.gif')
       .col-lg-6    
+        
+
+
+block script
+  script(src='/javascripts/particles.js')
+  script(src='/javascripts/myParticles.js')
