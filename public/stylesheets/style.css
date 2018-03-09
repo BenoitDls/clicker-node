@@ -8,6 +8,10 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+#messages {
+    color: #FFF7EA;
+}
+
 /* ---- particles.js container ---- */
 html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
