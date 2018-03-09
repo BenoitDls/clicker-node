@@ -11,7 +11,7 @@ function checkSignIn(req, res, next) {
 }
 
 /* GET home page. */
-router.get('/',  function (req, res, next) {
+router.get('/', checkSignIn, function (req, res, next) {
   res.render('index', {
     title: 'Express'
   });
