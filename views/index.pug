@@ -11,15 +11,24 @@ block content
             .progress.mt-5
               .progress-bar.font.bg-danger#life(role='progressbar', style='width: 100%', aria-valuenow='10', aria-valuemin='0', aria-valuemax='100') 
                 span 100%
-        img.rounded.text-center.animated.mt-4.fadeInUp#boss(src='/images/boss2.gif')
-      .col-lg-6.mt-5.text-right
-        ul#messages.mr-2
-        form
-          .form-row
-            .col-lg-6.offset-lg-4
-              input#msg.form-control(type='text', autocomplete='off')
-            .col-lg-2
-              button.btn.btn-light Envoyer
+        img.rounded.text-center.animated.mt-4.fadeInUp#boss(src='/images/boss3.gif')
+      .col-lg-4.mt-5
+        .card.border-light.bg-transparent.font-color
+          .card-header Chat avec les autres joueurs
+          .card-body 
+            ul#messages.mr-0
+            form
+              .row
+                .col-lg-8
+                  input#msg.form-control(type='text', autocomplete='off')
+                .col-lg-2
+                  button.btn.btn-light Envoyer
+      .col-lg-2.mt-5
+        .card.border-light.bg-transparent.font-color
+          .card-header Joueurs en ligne
+          .card-body#allUser
+            ul#joueurs
+            
 
 
 

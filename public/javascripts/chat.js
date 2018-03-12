@@ -13,7 +13,19 @@ $('form').submit(function () {
     return false;
 });
 
-socket.on('chat message', function (msg) {
-    $('#messages').append($('<li>').text(msg.username+' : '+msg.msg));
+socket.on('chat message', function (data) {
+    $('#messages').append($('<li>').text(data.username + ' : ' + data.msg));
 });
 
+socket.emit('user', tempUsername);
+
+socket.on('user', function (data) {
+    console.log(data)
+    $('#joueurs').empty()
+
+    data.forEach(function (item) {
+        $('#joueurs').append($('<li>').text(item[1]));
+    });
+    for (var element in data) {
+    }
+});

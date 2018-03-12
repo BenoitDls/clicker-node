@@ -10,9 +10,15 @@
 
 ul {
     list-style: none;
+    margin-left: 0;
+    padding: 0;
 }
 
 #messages {
+    color: #FFF7EA;
+}
+
+.font-color {
     color: #FFF7EA;
 }
 
