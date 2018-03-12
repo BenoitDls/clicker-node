@@ -3,7 +3,6 @@ let allUsers = []
 
 module.exports = (io) => {
   io.on('connection', function (socket) {
-    //socket.emit('username', session.username);
 
     socket.on('chat message', function (data) {
       io.emit('chat message', data);

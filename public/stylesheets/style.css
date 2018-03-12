@@ -14,8 +14,18 @@ ul {
     padding: 0;
 }
 
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
 #messages {
     color: #FFF7EA;
+}
+
+#ololo {
+    overflow: auto;
+    max-height: 30vw;
 }
 
 .font-color {
