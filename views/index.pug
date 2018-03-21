@@ -2,46 +2,38 @@ extends layout
 
 block content
   #particles-js
-  .container
-    .row
-      .col-lg-6.text-center.mt-5
-        h1#bossName Boss n°1
-        .row.text-center
-          .col-lg-8.offset-lg-2       
-            .progress.mt-5
-              .progress-bar.font.bg-danger#life(role='progressbar', style='width: 100%', aria-valuenow='10', aria-valuemin='0', aria-valuemax='100') 
-                span 100%
-        img.rounded.text-center.animated.mt-4.fadeInUp#boss(src='/images/boss3.gif')
-      .col-lg-4.mt-5
-        .card.border-light.bg-transparent.font-color
-          .card-header Chat avec les autres joueurs
-          .card-body#ololo
-            ul#messages.mr-0
-          .card-footer
-            form
-              .row
-                .col-lg-8
-                  input#msg.form-control(type='text', autocomplete='off')
-                .col-lg-2
-                  button.btn.btn-light Envoyer
-      .col-lg-2.mt-5
-        .card.border-light.bg-transparent.font-color
-          .card-header Joueurs en ligne
-          .card-body#allUser
-            ul#joueurs
-            
-
-
-
+  .row.mr-5
+    .col-lg-6.text-center.mt-5
+      h1#bossName Boss n°1
+      .row.text-center
+        .col-lg-8.offset-lg-2       
+          .progress.mt-5
+            .progress-bar.font.bg-danger#life(role='progressbar', style='width: 100%', aria-valuenow='10', aria-valuemin='0', aria-valuemax='100') 
+      img.rounded.text-center.animated.mt-4.fadeInUp#boss(src='/images/boss2.gif')
+    .col-lg-4.mt-5
+      .card.border-light.bg-transparent.font-color
+        .card-header Chat avec les autres joueurs
+        .card-body#ololo
+          ul#messages.mr-0
+        .card-footer
+          form
+            .row
+              .col-lg-9
+                input#msg.form-control(type='text', autocomplete='off')
+              .col
+                button.btn.btn-light Envoyer
+    .col-lg-2.mt-5
+      .card.border-light.bg-transparent.font-color
+        .card-header Joueurs en ligne
+        .card-body#allUser
+          ul#joueurs
 
 block script
   script(src='/javascripts/particles.js')
   script(src='/javascripts/myParticles.js')
-  script(src='/javascripts/usersConnected.js')
-  script(src='/javascripts/lifePoints.js')
+  //- script(src='/javascripts/lifePoints.js')
   script(src='/javascripts/bossAnimation.js')
   script(src="/socket.io/socket.io.js")
   script(src="/javascripts/app.js")
-  script(src="/javascripts/jquery.scrollbar.js")
-  script(src="/javascripts/scrollbar.js")
+  script(src="/javascripts/clicker.js")
   

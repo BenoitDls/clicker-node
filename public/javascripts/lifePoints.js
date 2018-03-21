@@ -1,20 +1,33 @@
-var lifePoint = 100
+let lifePointInitial = 3000
+let lifePoint = 3000
+let lifePointPercent = 100
+let degat = 8
+
+$('#life')
+    .text(lifePoint + ' HP')
+
+function toPercent(number, numberInitial) {
+    let result = number * 100 / numberInitial
+    return result
+}
 
 $("#boss").click(function () {
-    if (lifePoint > 0) {
-        lifePoint -= 2
-        if (lifePoint < 0) {
+    if (lifePointPercent > 0) {
+        lifePoint -= degat
+        lifePointPercent = toPercent(lifePoint, lifePointInitial)
+        if (lifePointPercent < 0) {
             lifePoint = 0
+            lifePointPercent = toPercent(lifePoint, lifePointInitial)
         }
-        if (lifePoint <= 20) {
+        if (lifePointPercent <= 20) {
             $('#life')
                 .css('color', 'black')
         }
-        lifePointPercent = lifePoint.toString() + "%"
-        console.log(lifePointPercent)
+        lifePointDisplay = lifePoint.toString() + "HP"
+        test = lifePointPercent + '%'
         $('#life')
-            .css('width', lifePointPercent)
-            .attr('aria-valuenow', lifePoint)
-            .text(lifePointPercent)
+            .css('width', test)
+            .attr('aria-valuenow', lifePointPercent)
+            .text(lifePointDisplay)
     }
 });

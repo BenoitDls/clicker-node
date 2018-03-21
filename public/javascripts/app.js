@@ -1,5 +1,5 @@
-var socket = io();
-var tempUsername = prompt("Entrez votre pseudo :");
+let socket = io();
+let tempUsername = prompt("Entrez votre pseudo :");
 
 $('form').submit(function () {
     data = $('#msg').val()
@@ -22,9 +22,8 @@ socket.emit('user', tempUsername);
 socket.on('user', function (data) {
     console.log(data)
     $('#joueurs').empty()
-
     data.forEach(function (item) {
         $('#joueurs').append($('<li>').text(item[1]));
     });
-    for (var element in data) {}
+    for (let element in data) {}
 })
