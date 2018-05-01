@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@font-face{
+    font-family: 'LLPIXEL3';
+    src: url('LLPIXEL3.ttf');
+}
+
 #bossName {
     font-family: 'Press Start 2P', cursive;
     color: #FFF7EA;
@@ -30,6 +35,32 @@ html,body {
 
 .font-color {
     color: #FFF7EA;
+}
+
+#bonus
+{
+    font-family: 'LLPIXEL3';
+    font-size: 50px;
+    color: red;
+    width: 100px;
+    opacity: 0;
+    position: relative;
+    left: 40%;
+    top: -30%;
+}
+
+#canvas
+{
+    z-index: 1;
+    width: 330px;
+    height: 350px;
+    background-image: url("/images/boss6.gif");
+}
+
+.btn.btn-primary.btn-lg
+{
+    height: 124px;
+    width: 200px;
 }
 
 /* ---- particles.js container ---- */

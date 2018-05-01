@@ -9,7 +9,8 @@ block content
         .col-lg-8.offset-lg-2       
           .progress.mt-5
             .progress-bar.font.bg-danger#life(role='progressbar', style='width: 100%', aria-valuenow='10', aria-valuemin='0', aria-valuemax='100') 
-      img.rounded.text-center.animated.mt-4.fadeInUp#boss(src='/images/boss2.gif')
+      canvas#canvas
+      p#bonus -1
     .col-lg-4.mt-5
       .card.border-light.bg-transparent.font-color
         .card-header Chat avec les autres joueurs
@@ -28,6 +29,11 @@ block content
         .card-body#allUser
           ul#joueurs
 
+    button.btn.btn-primary.btn-lg(type='button')#bonus2 Bonus2
+    button.btn.btn-primary.btn-lg(type='button')#bonus3 Bonus3
+    button.btn.btn-primary.btn-lg(type='button')#bonus4 Bonus4
+    button.btn.btn-primary.btn-lg(type='button')#bonus5 Bonus5      
+
 block script
   script(src="/socket.io/socket.io.js")
   script(src="/javascripts/app.js")
@@ -35,4 +41,6 @@ block script
   script(src='/javascripts/myParticles.js')
   script(src='/javascripts/lifePoints.js')
   script(src='/javascripts/bossAnimation.js')
+  script(src="/javascripts/TestAnimation.js")
+  script(src="/javascripts/bonus.js")
     

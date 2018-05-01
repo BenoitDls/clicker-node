@@ -10,6 +10,10 @@ module.exports = (io) => {
             io.emit('chat message', data);
         });
 
+        socket.on('Bonus1', data => {
+          socket.emit('Bonus', data);
+        });
+
         socket.on('user', function (data) {
             var valueToPush = new Array();
             valueToPush[0] = socket.id;
