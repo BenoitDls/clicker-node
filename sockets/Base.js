@@ -1,7 +1,10 @@
 let allUsers = []
+let bossLifeInit = 3000
 
 module.exports = (io) => {
     io.on('connection', function (socket) {
+
+        io.emit('start game', bossLifeInit)
 
         socket.on('chat message', function (data) {
             io.emit('chat message', data);

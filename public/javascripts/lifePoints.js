@@ -1,3 +1,8 @@
+socket.on('start game', function(data) {
+    let bossLifeInit = data
+    console.log(bossLifeInit)
+});
+
 let lifePointInitial = 3000
 let lifePoint = 3000
 let lifePointPercent = 100
@@ -31,3 +36,4 @@ $("#boss").click(function () {
             .text(lifePointDisplay)
     }
 });
+

@@ -25,7 +25,6 @@ var server = http.createServer(app);
 // Create io server
 const io = require('socket.io')(server);
 require('../sockets/Base')(io);
-require('../sockets/Game')(io);
 
 /**
  * Listen on provided port, on all network interfaces.
