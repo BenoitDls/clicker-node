@@ -43,6 +43,9 @@ html,body {
     width: 330px;
     height: 350px;
     background-image: url("/images/boss6.gif");
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
     margin-left: 200px;
 }
 
