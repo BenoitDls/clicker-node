@@ -94,5 +94,11 @@ $("#canvas").click(function () {
   {
       $('#bonus5').prop('disabled', false);
   }
+  else{
+    $('#bonus2').prop('disabled', true);
+    $('#bonus3').prop('disabled', true);
+    $('#bonus4').prop('disabled', true);
+    $('#bonus5').prop('disabled', true);
+}
 });
 
