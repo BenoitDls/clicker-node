@@ -1,4 +1,3 @@
-var number = 1;
 var bonus2 = 10000;
 var bonus3 = 4000;
 var bonus4 = 2000;
@@ -35,30 +34,28 @@ function bonus(temps){
   setInterval(() => canvas.click(), temps);
 }
 
-/*$('#bonus3')
-.click(() => {
-  compteur = compteur/1.1;
-  return compteur;
-});*/
-
 $('#bonus2')
 .click(() => {
   bonus(bonus2);
+  socket.emit('debitBonus2', 500);
 });
 
 $('#bonus3')
 .click(() => {
   bonus(bonus3);
+  socket.emit('debitBonus3', 1000);
 });
 
 $('#bonus4')
 .click(() => {
   bonus(bonus4);
+  socket.emit('debitBonus4', 5000);
 });
 
 $('#bonus5')
 .click(() => {
   bonus(bonus5);
+  socket.emit('debitBonus5', 10000);
 });
 
 $('#canvas')

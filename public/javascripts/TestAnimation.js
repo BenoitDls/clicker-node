@@ -17,7 +17,7 @@ $("#canvas").click(function () {
 	if(z=1)
 	{
 		var randomX = Math.floor(Math.random() * 330);
-		var randomY = 0;
+		var randomY = Math.floor(Math.random() * 30);
 
 		ctx.beginPath();
 		ctx.strokeStyle = '0f111d';

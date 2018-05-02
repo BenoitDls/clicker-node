@@ -12,7 +12,24 @@ module.exports = (io) => {
 
         socket.on('Bonus1', data => {
           socket.emit('Bonus', data);
+      });
+
+        socket.on('debitBonus2', data => {
+            console.log(data)
+            socket.emit('Bonus2', data);
         });
+
+        socket.on('debitBonus3', data => {
+          socket.emit('Bonus3', data);
+      });
+
+        socket.on('debitBonus4', data => {
+          socket.emit('Bonus4', data);
+      });
+
+        socket.on('debitBonus5', data => {
+          socket.emit('Bonus5', data);
+      });
 
         socket.on('user', function (data) {
             var valueToPush = new Array();

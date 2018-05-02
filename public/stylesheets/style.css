@@ -57,10 +57,24 @@ html,body {
     background-image: url("/images/boss6.gif");
 }
 
-.btn.btn-primary.btn-lg
+.bouton{
+    width:85px;
+    height:85px;
+    background:#fafafa;
+    box-shadow:2px 2px 8px #aaa;
+    font:bold 13px Arial;
+    border-radius:50%;
+    color:#555;
+    margin-left: 100px;
+    bottom: 0;
+}
+
+#monnaie
 {
-    height: 124px;
-    width: 200px;
+    color: white;
+    font-family: 'LLPIXEL3';
+    font-size: 50px;
+    color: red;
 }
 
 /* ---- particles.js container ---- */
